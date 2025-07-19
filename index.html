@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BLOXO.IO Texture Packs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <nav class="flex items-center justify-between px-5 h-14 select-none">
+    <a href="#" class="logo" aria-label="BLOXO.IO homepage link">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 7L12 2L21 7V17L12 22L3 17V7Z" stroke="none" stroke-width="2" fill="#19a7f0"/>
+        <path d="M12 2V22M21 7L3 17" stroke="#071421" stroke-width="1"/>
+      </svg>
+      BLOXO.IO
+    </a>
+    <div>
+      <a href="#" class="">Home</a>
+      <a href="#" class="active">Texture Packs</a>
+      <a href="#" class="">Mods</a>
+      <a href="#" class="">Community</a>
+    </div>
+  </nav>
+  <main class="container" role="main" aria-label="Main content area for texture packs">
+    <h1>TEXTURE PACKS</h1>
+    <h2>FOR BLOXO.IO</h2>
+    <p class="subtitle-highlight">DOWNLOAD YOUR FAVORITE TEXTURE PACKS &amp; TRANSFORM YOUR GAMING EXPERIENCE!</p>
+    <section class="features" aria-label="Features list">
+      <span><svg stroke="currentColor" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg> Over 50,000+ Downloads</span>
+      <span><svg stroke="currentColor" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg> Premium Quality Packs</span>
+    </section>
+    <form role="search" aria-label="Search texture packs" onsubmit="event.preventDefault()">
+      <input type="search" id="search" name="search" placeholder="Search texture packs..." autocomplete="off" aria-label="Search texture packs" />
+      <button class="search-btn" aria-label="Search texture packs button" type="submit" tabindex="0">
+        <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Search
+      </button>
+      <div class="filter-buttons" role="group" aria-label="Texture pack category filters">
+        <button type="button" class="filter-btn active" aria-pressed="true">All Packs</button>
+        <button type="button" class="filter-btn" aria-pressed="false">Realistic</button>
+        <button type="button" class="filter-btn" aria-pressed="false">Cartoon</button>
+        <button type="button" class="filter-btn" aria-pressed="false">Minimal</button>
+        <button type="button" class="filter-btn" aria-pressed="false">Retro</button>
+        <button type="button" class="filter-btn" aria-pressed="false">Fantasy</button>
+      </div>
+    </form>
+  </main>
+  <script>
+    // Handling filter buttons active state and aria-pressed toggle
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+      });
+    });
+  </script>
+</body>
+</html>
+
